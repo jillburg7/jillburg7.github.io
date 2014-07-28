@@ -247,7 +247,7 @@ void mousePressed() {
       setEmpty(g.remove(temp));
       console.log(temp);
       pQ.add(temp);
-      //reorderPositionQueue();
+      reorderPositionQueue();
     }
   }
   redraw();
@@ -257,13 +257,13 @@ void reorderPositionQueue() {
   ArrayList temp = new ArrayList();
   int i = 0;
   int pQsize = pQ.size();
-  Integer val;
-  while (i < pQsize) {
-    val = pQ.remove(pQsize-1);
-    if (val > pQ.get(i))
+  int val = pQ.remove(pQsize-1);
+  while (!pQ.isEmpty()) {
+    if (val > pQ.get(0))
       temp.add(val);
     else
-      temp.add(pQ.remove(i));
+      temp.add(pQ.remove(0));
+    i++;
   }
   pQ = temp;
 } //end reorderPositionQueue()

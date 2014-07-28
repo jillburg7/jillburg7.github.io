@@ -1,3 +1,6 @@
+//"w: 1023 h: 806" 
+// "w: 510.46666666666664 h: 806"
+
 var windowWidth = $("body").width();
 var windowHeight = $("body").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
@@ -83,7 +86,7 @@ void draw() {
       pqArr = sort(pqArr);
       sizer = 50;
       xLoc = (position*70)+45+(xoff-5);
-      yLoc = 842;
+      yLoc = 842*dimRatio;
       Peg p = new Peg(xLoc, yLoc, sizer, clicked);
       g.put(position, p);  //add to guess peg map
       stroke(0);
@@ -92,7 +95,7 @@ void draw() {
     }
   } //endif GUESS_MODE
   else if (CURRENT_PROGRAM_MODE == FEEDBACK_MODE) {
-    yLoc = yoff-10+725-(numGuess*65);
+    yLoc = (yoff-10+725-(numGuess*65))*dimRatio;
     commitGuess();
     xLoc = xoff+314;
     
@@ -349,7 +352,7 @@ void initializeGuess() {
   fill(EMPTY);
   for (int position = 0; position < 4; position++) {  
     xLoc = (position*70)+45;
-    yLoc = 752;
+    yLoc = 752*dimRatio;
     ellipse(x+xLoc, y+yLoc, sizer, sizer); 
   }
 } //end initializeGuess

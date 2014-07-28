@@ -33,19 +33,17 @@ int off = 25;
 int xLoc, yLoc;
 int sizer;
 int xoff, yoff;
-int xScale, yScale;
 
 //colors
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
 
 void setup () {
-  size( 570, 900 );
+  size( windowWid/2, windowHeight/2 );
   set = false;
   
   CURRENT_PROGRAM_MODE = -1;
   
-  xScale = width/570;
-  yScale = height/900;
+
   xoff = (off + 25);
   yoff = 100;
 
@@ -600,7 +598,7 @@ class FeedbackPeg extends Peg {
   }
   
   FeedbackPeg(int x, int y, int sizer, color c) {
-    super(x, y, 15*xScale, EMPTY);
+    super(x, y, 15, EMPTY);
     //this.x = x;
     //this.y = y;
     //paint = EMPTY;  //#D1D1D1;  //PrettyColor.EMPTY;

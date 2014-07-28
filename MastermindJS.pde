@@ -1,7 +1,10 @@
 var windowWidth = $("body").width();
 var windowHeight = $("body").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
-console.log("w: " + windowWidth/4 + " h: " + windowHeight);
+
+float dimRatio = 570/900;
+
+console.log("w: " + (dimRatio*windowHeight) + " h: " + windowHeight);
 
 // BUTTONS
 RectButton checkButt, newButt, revealButt, tutorialButt;
@@ -39,7 +42,7 @@ int xoff, yoff;
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
 
 void setup () {
-  size( windowWidth/2, windowHeight ); //"w: 1023 h: 799"
+  size( (dimRatio*windowHeight), windowHeight ); //"w: 1023 h: 799"
   //570, 900
   set = false;
   

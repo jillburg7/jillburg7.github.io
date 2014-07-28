@@ -43,10 +43,12 @@ int xoff, yoff;
 
 //colors
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
+float gameWidth = dimRatio*windowHeight;
 
 void setup () {
-  size( (dimRatio*windowHeight), windowHeight ); //"w: 1023 h: 799"
+  size( gameWidth, windowHeight ); //"w: 1023 h: 799"
   //570, 900
+  console.log("gameWidth: " + gameWidth);
   set = false;
   
   CURRENT_PROGRAM_MODE = -1;

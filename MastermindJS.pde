@@ -97,7 +97,7 @@ void draw() {
     }
   } //endif GUESS_MODE
   else if (CURRENT_PROGRAM_MODE == FEEDBACK_MODE) {
-    yLoc = (yoff-10+725-(numGuess*65))*dimRatio;
+    yLoc = (yoff-10+725-(numGuess*65));//*dimRatio;
     commitGuess();
     xLoc = xoff+314;
     

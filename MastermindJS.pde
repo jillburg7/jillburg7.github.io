@@ -1,5 +1,5 @@
-var windowWidth = $(document).width();
-var windowHeight = $(document).height();
+var windowWidth = $("body").width();
+var windowHeight = $("body").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
 console.log("w: " + windowWidth/4 + " h: " + windowHeight);
 
@@ -39,7 +39,7 @@ int xoff, yoff;
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
 
 void setup () {
-  size( windowWidth/4, windowHeight ); //"w: 1023 h: 556"
+  size( windowWidth/2, windowHeight ); //"w: 1023 h: 799"
   //570, 900
   set = false;
   

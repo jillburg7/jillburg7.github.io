@@ -18,7 +18,8 @@ HashMap<Integer, Peg> g = new HashMap<Integer, Peg>(4);
 HashMap<Integer, Peg> colorpegs = new HashMap<Integer, Peg>(8);
 ArrayList colorMap = new ArrayList();
 FeedbackPeg[] fb = new FeedbackPeg[4];
-ArrayList pQ;
+//ArrayList pQ;
+int[] pqArr;
 
 // Define and create rectangle button
 color buttoncolor = color(204);
@@ -70,7 +71,9 @@ void draw() {
   
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
-      position = pQ.remove(0);
+      // position = pQ.remove(0);
+      position = pqArr[0];
+      pqArr[0] = 9;
       sizer = 50;
       xLoc = (position*70)+45+(xoff-5);
       yLoc = 842;
@@ -244,9 +247,12 @@ void mousePressed() {
     if (temp != null && (CURRENT_PROGRAM_MODE == GUESS_MODE)) {
       //Removes the mapping for this key from guess peg map 
       setEmpty(g.remove(temp));
-      int tnum = (int) temp;
-      pQ.add(tnum);
-      reorderPositionQueue();
+      //int tnum = (int) temp;
+      // pQ.add(tnum);
+      // pQ.add(temp);
+      pqArr[3] = temp;
+      pqArr = sort(pqArr);
+      //reorderPositionQueue();
     }
   }
   redraw();
@@ -319,9 +325,11 @@ void commitGuess() {
 } //end commitGuess
 
 void initPositionQueue() {
-  pQ = new ArrayList();
+  // pQ = new ArrayList();
+  pqArr = new int[4];
   for(int i = 0; i < 4; i++)
-    pQ.add(i);
+    pqArr[i] = i;
+    // pQ.add(i);
 } //end initPositionQueue
 
 void initializeGuess() {

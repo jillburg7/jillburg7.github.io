@@ -71,7 +71,6 @@ void draw() {
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
       position = pQ.remove(0);
-      console.log(typeof(position));
       sizer = 50;
       xLoc = (position*70)+45+(xoff-5);
       yLoc = 842;
@@ -245,7 +244,7 @@ void mousePressed() {
     if (temp != null && (CURRENT_PROGRAM_MODE == GUESS_MODE)) {
       //Removes the mapping for this key from guess peg map 
       setEmpty(g.remove(temp));
-      console.log(temp);
+      console.log(typeOf(temp);
       pQ.add(temp);
       reorderPositionQueue();
     }

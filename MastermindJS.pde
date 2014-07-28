@@ -1,6 +1,7 @@
-var windowWid = $(document).width();
+var windowWidth = $(document).width();
 var windowHeight = $(document).height();
-console.log("w: " + windowWid + " h: " + windowHeight);
+console.log("w: " + windowWidth + " h: " + windowHeight);
+console.log("w: " + windowWidth/4 + " h: " + windowHeight);
 
 // BUTTONS
 RectButton checkButt, newButt, revealButt, tutorialButt;
@@ -38,7 +39,8 @@ int xoff, yoff;
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
 
 void setup () {
-  size( windowWid/2, windowHeight/2 );
+  size( windowWidth/4, windowHeight ); //"w: 1023 h: 556"
+  //570, 900
   set = false;
   
   CURRENT_PROGRAM_MODE = -1;

@@ -74,6 +74,7 @@ void draw() {
       // position = pQ.remove(0);
       position = pqArr[0];
       pqArr[0] = 9;
+      pqArr = sort(pqArr);
       sizer = 50;
       xLoc = (position*70)+45+(xoff-5);
       yLoc = 842;

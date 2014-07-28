@@ -247,10 +247,26 @@ void mousePressed() {
       setEmpty(g.remove(temp));
       console.log(temp);
       pQ.add(temp);
+      reorderPositionQueue();
     }
   }
   redraw();
 } //end mousePressed() 
+
+void reorderPositionQueue() {
+  ArrayList temp = new ArrayList();
+  int i = 0;
+  int pQsize = pQ.size();
+  int val;
+  while (i < pQsize) {
+    val = pQ.remove(pQsize-1);
+    if (val > pQ.get(i))
+      temp.add(val);
+    else
+      temp.add(pQ.remove(i));
+  }
+  pQ = temp;
+} //end reorderPositionQueue()
 
 void setEmpty(Peg toRemove) {
   xLoc = toRemove.getX();

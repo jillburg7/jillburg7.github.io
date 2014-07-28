@@ -46,8 +46,8 @@ color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
 float gameWidth = dimRatio*windowHeight;
 
 void setup () {
-  size( gameWidth, windowHeight ); //"w: 1023 h: 799"
-  //570, 900
+  //size( gameWidth, windowHeight ); //"w: 1023 h: 799"
+  size( 570, 900 );
   console.log("gameWidth: " + gameWidth);
   set = false;
   

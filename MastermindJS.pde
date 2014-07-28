@@ -255,15 +255,13 @@ void mousePressed() {
 
 void reorderPositionQueue() {
   ArrayList temp = new ArrayList();
-  int i = 0;
   int pQsize = pQ.size();
   int val = pQ.remove(pQsize-1);
   while (!pQ.isEmpty()) {
-    if (val > pQ.get(0))
+    if (val < pQ.get(0))
       temp.add(val);
     else
       temp.add(pQ.remove(0));
-    i++;
   }
   pQ = temp;
 } //end reorderPositionQueue()

@@ -1,3 +1,6 @@
+var windowWid = $(document).width();
+var windowHeight = $(document).height();
+console.log("w: " + windowWid + " h: " + windowHeight);
 
 // BUTTONS
 RectButton checkButt, newButt, revealButt, tutorialButt;

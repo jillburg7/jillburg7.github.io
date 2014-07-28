@@ -244,7 +244,7 @@ void mousePressed() {
     if (temp != null && (CURRENT_PROGRAM_MODE == GUESS_MODE)) {
       //Removes the mapping for this key from guess peg map 
       setEmpty(g.remove(temp));
-      console.log(typeOf(temp));
+      console.log(typeof(temp));
       pQ.add(temp);
       reorderPositionQueue();
     }

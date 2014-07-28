@@ -71,7 +71,7 @@ void draw() {
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
       position = pQ.remove(0);
-      console.log(position);
+      console.log(typeof(position));
       sizer = 50;
       xLoc = (position*70)+45+(xoff-5);
       yLoc = 842;

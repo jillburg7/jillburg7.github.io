@@ -79,7 +79,7 @@ void draw() {
   update(mouseX, mouseY);
   
   newButt.display();
-  textSize(18*.8);
+  textSize(18*.75);
   text("New", (491/570 * gameWidth), (173/900 * gameHeight));
   checkButt.display();
   text("Check", (368/570 * gameWidth), (848/900 * gameHeight));
@@ -362,7 +362,7 @@ void displayNumGuess(String s) {
   stroke(0);
   fill(255);
   rect((470/570 * gameWidth), (107/900 * gameHeight), (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
-  textSize(16*.8);
+  textSize(16*.75);
   fill(0);
   text(s, (504/570 * gameWidth), (131/900 * gameHeight)); //guess tracker -- for user
 } //end displayNumGuess
@@ -373,7 +373,7 @@ void initializeControlPanel() {
   rect((460/570 * gameWidth), (84 /900 * gameHeight), (96/570 * gameWidth), (198 /900 * gameHeight));  //control panel border
   fill(255);
   rect((470/570 * gameWidth), (107 /900 * gameHeight), (76/570 * gameWidth), (36 /900 * gameHeight));  //score panel
-  textSize(16*.8);
+  textSize(16*.75);
   fill(0);
   text("Guesses:", (472/570 * gameWidth), (89 /900 * gameHeight), (145/570 * gameWidth), (84 /900 * gameHeight)); //header text
 } //end initializeControlPanel
@@ -396,7 +396,7 @@ void initializeColors() {
 } //end initializeColors
 
 void initializeBoard() {
-  textSize(60*.8);
+  textSize(60*.75);
   fill(0, 102, 153, 204);
   text("mastermind", (25/570 * gameWidth), (25/900 * gameHeight), (350/570 * gameWidth), (75/900 * gameHeight)); //GAME NAME
   stroke(0);

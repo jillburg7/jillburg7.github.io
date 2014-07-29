@@ -88,12 +88,15 @@ void draw() {
   tutorialButt.display();
   text("How-To", (477/570 * gameWidth), (262/900 * gameHeight));
   
+  sizer = 50/570 * gameWidth;
+      if (sizer % 2 !== 0)
+        sizer = sizer-1;
+  
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
       position = pqArr[0];
       pqArr[0] = 9;
       pqArr = sort(pqArr);
-      sizer = 50/570 * gameWidth; //-----
       xLoc = ((position*70)+90)/570 * gameWidth;
       yLoc = (842/900 * gameHeight);
       Peg p = new Peg(xLoc, yLoc, sizer, clicked);
@@ -386,6 +389,8 @@ void initializeColors() {
   rect((472/570 * gameWidth), (312 /900 * gameHeight), (72/570 * gameWidth), (560 /900 * gameHeight));  //inner panel
   color[] clr = getColors(); 
   int sizer = (55/570 * gameWidth);
+  if (sizer % 2 !== 0)
+    sizer = sizer-1;
   Peg p;
   for (int i = 0; i < 8; i++) {
     p = new Peg((509/570 * gameWidth), (((i*70)+347)/900 * gameHeight), sizer, clr[i]);

@@ -108,7 +108,7 @@ void draw() {
   } //endif GUESS_MODE
   else if (CURRENT_PROGRAM_MODE == FEEDBACK_MODE) {
 
-    yLoc = (815-(numGuess*65))/900 * gameHeight;
+    yLoc = 815-(numGuess*65);
     commitGuess();
 
     xLoc = 364;

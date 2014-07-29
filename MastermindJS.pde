@@ -5,9 +5,9 @@ var windowWidth = $("#game").width();
 var windowHeight = $("#game").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
 
-float dimRatio = 490/800;
-if (windowWidth > 490)
-  windowWidth = 490;
+float dimRatio = 400/700;
+if (windowWidth > 400)
+  windowWidth = 400;
 console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 
 windowHeight = ((1/dimRatio)*windowWidth);
@@ -80,7 +80,7 @@ void draw() {
   update(mouseX, mouseY);
   
   newButt.display();
-  textSize(18);
+  textSize(18*.8);
   text("New", (491/570 * gameWidth), (173/900 * gameHeight));
   checkButt.display();
   text("Check", (368/570 * gameWidth), (848/900 * gameHeight));

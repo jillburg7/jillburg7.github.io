@@ -8,9 +8,8 @@ console.log("w: " + windowWidth + " h: " + windowHeight);
 float dimRatio = 490/800;
 if (windowWidth > 490)
   windowWidth = 490;
-console.log("w: " + windowHeight + " h: " + ((1/dimRatio)*windowWidth));
+console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 
-windowWidth = windowHeight;
 windowHeight = ((1/dimRatio)*windowWidth);
 
 // BUTTONS

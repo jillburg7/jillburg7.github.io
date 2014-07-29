@@ -1,8 +1,8 @@
 //"w: 1023 h: 806" 
 // "w: 510.46666666666664 h: 806"
 
-var windowWidth = $("body").width();
-var windowHeight = $("body").height();
+var windowWidth = $("game").width();
+var windowHeight = $("game").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
 
 float dimRatio = 490/800;
@@ -35,31 +35,35 @@ color buttoncolor = color(204);
 color highlight = color(153);
 
 //drawing locations
-int off = 25;
+float off = 25/570 * gameWidth;
 int xLoc, yLoc;
 int sizer;
 int xoff, yoff;
 
 //colors
 color RED, ORANGE, YELLOW, GREEN, TEAL, BLUE, PURPLE, PINK, EMPTY, WHITE, BLACK;
+
+//----
 float gameWidth = dimRatio*windowHeight;
+float gameHeight = windowHeight;
+float buttW = 470/570 * gameWidth;
+float buttSize = 76/570 * gameWidth;
+//---
 
 void setup () {
-  //size( gameWidth, windowHeight ); //"w: 1023 h: 799"
+  //size( gameWidth, gameHeight ); //"w: 1023 h: 799"
   size( 570, 900 );
   console.log("gameWidth: " + gameWidth);
-  set = false;
-  
+  set = false;  
   CURRENT_PROGRAM_MODE = -1;
-  
 
-  xoff = (off + 25);
-  yoff = 100;
+  xoff = 50/570 * gameWidth;
+  yoff = 100/900 * gameHeight;
 
-  checkButt = new RectButton(xoff-5+307, 824, 80, buttoncolor, highlight, 46, 15, 19);
-  newButt = new RectButton(470, 148, 76, buttoncolor, highlight, 32, 6, 25);
-  revealButt = new RectButton(470, 192, 76, buttoncolor, highlight, 30, 2, 27);
-  tutorialButt = new RectButton(470, 237, 76, buttoncolor, highlight, 30, 3, 27);
+  checkButt = new RectButton((352/570 * gameWidth), (824/900 * gameHeight), (80/570 * gameWidth), buttoncolor, highlight, 46, 15, 19);
+  newButt = new RectButton(buttW, (148/900 * gameHeight), buttSize, buttoncolor, highlight, 32, 6, 25);
+  revealButt = new RectButton(buttW, (192/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 2, 27);
+  tutorialButt = new RectButton(buttW, (237/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 3, 27);
   
   setColors();
   noStroke();
@@ -71,22 +75,22 @@ void draw() {
   
   newButt.display();
   textSize(18);
-  text("New", 491, 173);
+  text("New", (491/570 * gameWidth), (173/900 * gameHeight));
   checkButt.display();
-  text("Check", 368, 848);
+  text("Check", (368/570 * gameWidth), (848/900 * gameHeight));
   revealButt.display();
-  text("Reveal", 480, 217);
+  text("Reveal", (480/570 * gameWidth), (217/900 * gameHeight));
   tutorialButt.display();
-  text("How-To", 477, 262);
+  text("How-To", (477/570 * gameWidth), (262/900 * gameHeight));
   
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
       position = pqArr[0];
       pqArr[0] = 9;
       pqArr = sort(pqArr);
-      sizer = 50;
-      xLoc = (position*70)+45+(xoff-5);
-      yLoc = 842;//*dimRatio;
+      sizer = 50/570 * gameWidth; //-----
+      xLoc = ((position*70)+90)/570 * gameWidth;
+      yLoc = (842/900 * gameHeight);
       Peg p = new Peg(xLoc, yLoc, sizer, clicked);
       g.put(position, p);  //add to guess peg map
       stroke(0);
@@ -95,14 +99,21 @@ void draw() {
     }
   } //endif GUESS_MODE
   else if (CURRENT_PROGRAM_MODE == FEEDBACK_MODE) {
-    yLoc = (yoff-10+725-(numGuess*65));//*dimRatio;
+
+    yLoc = (815-(numGuess*65))/900 * gameHeight;
     commitGuess();
-    xLoc = xoff+314;
+
+    xLoc = 364;
+
+    float fbLx = (xLoc+14)/570 * gameWidth;
+    float fbRx = (xLoc+40)/570 * gameWidth;
+    float fbTy = (yLoc+14)/900 * gameHeight;
+    float fbBy = (yLoc+40)/900 * gameHeight;
     
-    fb[0] = new FeedbackPeg(xLoc+14, yLoc+14, 0, EMPTY);  
-    fb[1] = new FeedbackPeg(xLoc+40, yLoc+14, 0, EMPTY);
-    fb[2] = new FeedbackPeg(xLoc+14, yLoc+40, 0, EMPTY);
-    fb[3] = new FeedbackPeg(xLoc+40, yLoc+40, 0, EMPTY);
+    fb[0] = new FeedbackPeg(fbLx, fbTy, 0, EMPTY);  
+    fb[1] = new FeedbackPeg(fbRx, fbTy, 0, EMPTY);
+    fb[2] = new FeedbackPeg(fbLx, fbBy, 0, EMPTY);
+    fb[3] = new FeedbackPeg(fbRx, fbBy, 0, EMPTY);
     
     for (int i = 0; i <numBlack; i++) {
       fb[i].setColor(BLACK);
@@ -123,7 +134,7 @@ void draw() {
     if (numBlack == 4 || numGuess == 10) {
       stroke(0);
       fill(255);
-      rect(xoff-5, yoff, 300, 54);  // code panel
+      rect((45/570 * gameWidth), (100/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight));  // code panel
       for (int i = 0; i < 4; i++) {
         c.get(i).setColor(getColorValue(c.get(i).getValue()));
         c.get(i).drawPeg();  // draw code pegs
@@ -138,7 +149,7 @@ void draw() {
   else if (CURRENT_PROGRAM_MODE == CODE_MODE) {
     stroke(0);
     fill(255);
-    rect(xoff-5, yoff, 300, 54);  // code panel
+    rect((45/570 * gameWidth), (100/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight));  // code panel
     for (int i = 0; i < 4; i++) {
       c.get(i).setColor(getColorValue(c.get(i).getValue()));
       c.get(i).drawPeg();  // draw code pegs
@@ -165,7 +176,6 @@ void update(int x, int y) {
       clearBoard(); //initalize game board
       g.clear();    //clear guess structure
       
-      //set = false;
       generateCodeMap();  //set new random code
       setGuessMode();
       redraw();
@@ -224,9 +234,14 @@ void update(int x, int y) {
 
 void mousePressed() {  
   clicked = null;
-  if (CURRENT_PROGRAM_MODE == GUESS_MODE && (mouseX > 470) && (mouseY > 265)) {
+  float boardW = 470/570 * gameWidth;
+  float boardH = 265/900 * gameHeight;
+  float guessW = 350/570 * gameWidth;
+  float guessH = 815/900 * gameHeight;
+
+  if (CURRENT_PROGRAM_MODE == GUESS_MODE && (mouseX > boardW) && (mouseY > boardH)) {
     //color chosen
-    float closest = 48;
+    float closest = 48/570 * gameWidth;
     Iterator it = colorpegs.entrySet().iterator();  // Get an iterator
     while (it.hasNext()) {
       Map.Entry me = (Map.Entry)it.next();
@@ -238,9 +253,9 @@ void mousePressed() {
       }
     }
   }
-  else if (CURRENT_PROGRAM_MODE == GUESS_MODE && (mouseX < xoff+300) && (mouseY > (11*65)+yoff)) {
+  else if (CURRENT_PROGRAM_MODE == GUESS_MODE && (mouseX < guessW) && (mouseY > guessH)) {
     //REMOVE A PEG
-    float closest = 48;
+    float closest = 48/570 * gameWidth;
     Iterator<Integer> keySetIterator = g.keySet().iterator();
     Integer temp = null;
 
@@ -308,14 +323,13 @@ void commitGuess() {
   stroke(0);
   if (g.size() > 0) {
     for (int i = 0; i < 4; i++) {
-      g.get(i).setY(yLoc+27);  //set respective y location
+      g.get(i).setY(yLoc+(27/900 * gameHeight));  //set respective y location
       g.get(i).drawPeg();    //update peg component
       g.remove(i);  //remove from guess peg map
     }
   }
-  stroke(0);  
   fill(255);
-  rect(xoff-5, (11*65)+yoff, 300, 54);  //clear guess panel
+  rect((45/570 * gameWidth), (815/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight)); //clear guess panel
 } //end commitGuess
 
 void initPositionQueue() {
@@ -325,16 +339,16 @@ void initPositionQueue() {
 } //end initPositionQueue
 
 void initializeGuess() {
-  int x = (xoff-5);
-  int y = (yoff-10);
+  int x = (45/570 * gameWidth);
+  int y = (90/900 * gameHeight);
   stroke(0);
   fill(255);
-  rect(xoff-5, (11*65)+yoff, 300, 54);  // clears guess panel
+  rect((45/570 * gameWidth), (815/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight)); // clears guess panel
   stroke(209);
   fill(EMPTY);
   for (int position = 0; position < 4; position++) {  
-    xLoc = (position*70)+45;
-    yLoc = 752;//*dimRatio;
+    xLoc = ((position*70)+45)/570 * gameWidth;
+    yLoc = 752/900 * gameHeight;
     ellipse(x+xLoc, y+yLoc, sizer, sizer); 
   }
 } //end initializeGuess
@@ -342,34 +356,34 @@ void initializeGuess() {
 void displayNumGuess(String s) {
   stroke(0);
   fill(255);
-  rect(470, 107, 76, 36);  //redraw score panel
-  textSize(16);
+  rect((470/570 * gameWidth), (107/900 * gameHeight, (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
+  textSize(16*.8);
   fill(0);
-  text(s, 504, 131);//guess tracker -- for user
+  text(s, (504/570 * gameWidth), (131/900 * gameHeight)); //guess tracker -- for user
 } //end displayNumGuess
 
 void initializeControlPanel() {
   stroke(0);
   fill(247);
-  rect(460, 84, 96, 198);  //control panel border
+  rect((460/570 * gameWidth), (84 /900 * gameHeight), (96/570 * gameWidth), (198 /900 * gameHeight));  //control panel border
   fill(255);
-  rect(470, 107, 76, 36);  //score panel
-  textSize(16);
+  rect((470/570 * gameWidth), (107 /900 * gameHeight), (76/570 * gameWidth), (36 /900 * gameHeight));  //score panel
+  textSize(16*.8);
   fill(0);
-  text("Guesses:", 472, 89, 145, 84); //header text
+  text("Guesses:", (472/570 * gameWidth), (89 /900 * gameHeight), (145/570 * gameWidth), (84 /900 * gameHeight)); //header text
 } //end initializeControlPanel
 
 void initializeColors() {
   stroke(0);
   fill(247);
-  rect(460, 299, 96, 487+yoff); //outer color peg panel
+  rect((460/570 * gameWidth), (299 /900 * gameHeight), (96/570 * gameWidth), (587 /900 * gameHeight)); //outer color peg panel
   fill(255);
-  rect(472, 312, 72, 460+yoff);  //inner panel
+  rect((472/570 * gameWidth), (312 /900 * gameHeight), (72/570 * gameWidth), (560 /900 * gameHeight));  //inner panel
   color[] clr = getColors(); 
-  int sizer = 55;
+  int sizer = (55/570 * gameWidth);
   Peg p;
   for (int i = 0; i < 8; i++) {
-    p = new Peg(473+36, (i*70)+347, sizer, clr[i]);
+    p = new Peg((509/570 * gameWidth), (((i*70)+347)/900 * gameHeight), sizer, clr[i]);
     colorpegs.put(i, p);
     stroke(0);
     p.drawPeg();  //draw peg
@@ -379,20 +393,20 @@ void initializeColors() {
 void initializeBoard() {
   textSize(60);
   fill(0, 102, 153, 204);
-  text("mastermind", off, 25, 350, 75); //GAME NAME
+  text("mastermind", (25/570 * gameWidth), (25/900 * gameHeight), (350/570 * gameWidth), (75/900 * gameHeight)); //GAME NAME
   stroke(0);
   fill(247);
-  rect(off, 84, 415, 801);  //board panel
+  rect((25/570 * gameWidth), (84/900 * gameHeight), (415/570 * gameWidth), (801/900 * gameHeight));  //board panel
   fill(175);
-  rect(xoff-5, yoff, 300, 54);  //code panel
+  rect((45/570 * gameWidth), (100/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight));  //code panel
   stroke(0);
   fill(255);
   //10 previous guess panels
   for(int i = 0; i < 10; i++) {              // 10 guess attempt panels
-    rect(xoff-5, (i*65)+yoff+65, 300, 54);   //guess peg panels
-    rect(xoff+314, (i*65)+yoff+65, 54, 54);  //feedback peg panels
+    rect((45/570 * gameWidth), ((i*65)+165)/900 * gameHeight, (300/570 * gameWidth), (54/900 * gameHeight));   //guess peg panels
+    rect((364/570 * gameWidth), ((i*65)+165)/900 * gameHeight, (54/570 * gameWidth), (54/900 * gameHeight));  //feedback peg panels
   }
-  rect(xoff-5, (11*65)+yoff, 300, 54);  //bottom guess panel
+  rect((45/570 * gameWidth), (815/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight)); // clears guess panel
 } //end initializeBoard
 
 color getColorValue(int val) {
@@ -480,7 +494,7 @@ void getNumWhite() {
 
 void generateCodeMap() {
   for (int i = 0; i < 4; i++)
-    c.put(i, new RandomPeg( (i*70)+45+xoff-5, yoff-10+752-(11*65), 50, EMPTY));
+    c.put(i, new RandomPeg( ((i*70)+90)/570 * gameWidth, (127/900 * gameHeight), (50/570 * gameWidth), EMPTY));
   ready = true;
 } //end generateCodeMap
 
@@ -539,8 +553,6 @@ class RandomPeg extends Peg {
   
   RandomPeg(int x, int y, int sizer, color c) {
     super(x, y, sizer, c);
-//    this.x = x;
-//    this.y = y;
     value = (int) random(0, 7);
   }
   
@@ -588,11 +600,7 @@ class FeedbackPeg extends Peg {
   }
   
   FeedbackPeg(int x, int y, int sizer, color c) {
-    super(x, y, 15, EMPTY);
-    //this.x = x;
-    //this.y = y;
-    //paint = EMPTY;  //#D1D1D1;  //PrettyColor.EMPTY;
-    //sizer = 15*xScale;
+    super(x, y, (15/570 * gameWidth), EMPTY);
   }
   
   void drawPeg() {
@@ -649,7 +657,7 @@ class RectButton {
   }
 
   boolean over() {
-    pressed = overRect(x, y, sizer, 36);
+    pressed = overRect(x, y, sizer, (36/900 * gameHeight));
     return pressed;
   }
 
@@ -665,10 +673,8 @@ class RectButton {
   void display() {
     stroke(255);
     fill(currentcolor);
-    rect(x, y, sizer, 36);
+    rect(x, y, sizer, (36/900 * gameHeight));
     fill(0);
   }
   
 } //end RectButton class
-
-

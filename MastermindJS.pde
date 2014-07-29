@@ -7,7 +7,7 @@ console.log("w: " + windowWidth + " h: " + windowHeight);
 
 float dimRatio = 490/800;
 
-console.log("w: " + (dimRatio*windowHeight) + " h: " + ((1/dimRatio)*windowHeight));
+console.log("w: " + (dimRatio*windowHeight) + " h: " + ((1/dimRatio)*windowWidth));
 
 // BUTTONS
 RectButton checkButt, newButt, revealButt, tutorialButt;

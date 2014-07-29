@@ -8,9 +8,9 @@ console.log("w: " + windowWidth + " h: " + windowHeight);
 float dimRatio = 490/800;
 if (windowWidth > 490)
   windowWidth = 490;
-console.log("w: " + (dimRatio*windowHeight) + " h: " + ((1/dimRatio)*windowWidth));
+console.log("w: " + windowHeight + " h: " + ((1/dimRatio)*windowWidth));
 
-windowWidth = (dimRatio*windowHeight);
+windowWidth = windowHeight;
 windowHeight = ((1/dimRatio)*windowWidth);
 
 // BUTTONS
@@ -57,7 +57,7 @@ float buttSize = 76/570 * gameWidth;
 void setup () {
   // size( gameWidth, gameHeight ); //"w: 1023 h: 799"
   
-  size( (dimRatio*windowHeight), ((1/dimRatio)*windowWidth) );
+  size( windowHeight, ((1/dimRatio)*windowWidth) );
   
   // size( 570, 900 );
   // console.log("gameWidth: " + gameWidth);

@@ -28,7 +28,6 @@ HashMap<Integer, Peg> g = new HashMap<Integer, Peg>(4);
 HashMap<Integer, Peg> colorpegs = new HashMap<Integer, Peg>(8);
 ArrayList colorMap = new ArrayList();
 FeedbackPeg[] fb = new FeedbackPeg[4];
-//ArrayList pQ;
 int[] pqArr;
 
 // Define and create rectangle button
@@ -82,7 +81,6 @@ void draw() {
   
   if (CURRENT_PROGRAM_MODE == GUESS_MODE) {
     if(clicked != null && g.size() < 4) {
-      // position = pQ.remove(0);
       position = pqArr[0];
       pqArr[0] = 9;
       pqArr = sort(pqArr);
@@ -259,29 +257,12 @@ void mousePressed() {
     if (temp != null && (CURRENT_PROGRAM_MODE == GUESS_MODE)) {
       //Removes the mapping for this key from guess peg map 
       setEmpty(g.remove(temp));
-      //int tnum = (int) temp;
-      // pQ.add(tnum);
-      // pQ.add(temp);
       pqArr[3] = temp;
       pqArr = sort(pqArr);
-      //reorderPositionQueue();
     }
   }
   redraw();
-} //end mousePressed() 
-
-void reorderPositionQueue() {
-  ArrayList temp = new ArrayList();
-  int pQsize = pQ.size();
-  int val = pQ.remove(pQsize-1);
-  while (!pQ.isEmpty()) {
-    if (val < pQ.get(0))
-      temp.add(val);
-    else
-      temp.add(pQ.remove(0));
-  }
-  pQ = temp;
-} //end reorderPositionQueue()
+} //end mousePressed()
 
 void setEmpty(Peg toRemove) {
   xLoc = toRemove.getX();
@@ -324,6 +305,7 @@ void clearBoard() {
 
 //Updates guess peg y-coords & draws them in their perminant location
 void commitGuess() {
+  stroke(0);
   if (g.size() > 0) {
     for (int i = 0; i < 4; i++) {
       g.get(i).setY(yLoc+27);  //set respective y location
@@ -337,11 +319,9 @@ void commitGuess() {
 } //end commitGuess
 
 void initPositionQueue() {
-  // pQ = new ArrayList();
   pqArr = new int[4];
   for(int i = 0; i < 4; i++)
     pqArr[i] = i;
-    // pQ.add(i);
 } //end initPositionQueue
 
 void initializeGuess() {

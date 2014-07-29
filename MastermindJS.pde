@@ -1,8 +1,8 @@
 //"w: 1023 h: 806" 
 // "w: 510.46666666666664 h: 806"
 
-var windowWidth = $("game").width();
-var windowHeight = $("game").height();
+var windowWidth = $("#game").width();
+var windowHeight = $("#game").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
 
 float dimRatio = 490/800;

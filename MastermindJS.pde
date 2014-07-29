@@ -6,7 +6,8 @@ var windowHeight = $("#game").height();
 console.log("w: " + windowWidth + " h: " + windowHeight);
 
 float dimRatio = 490/800;
-
+if (windowWidth > 490)
+  windowWidth = 490;
 console.log("w: " + (dimRatio*windowHeight) + " h: " + ((1/dimRatio)*windowWidth));
 
 // BUTTONS

@@ -3,9 +3,9 @@
 var windowWidth = $("#game").width();
 var windowHeight = $("#game").height();
 
-float dimRatio = 390/700;
-if (windowWidth > 390)
-  windowWidth = 390;
+float dimRatio = 430/700;
+if (windowWidth > 430)
+  windowWidth = 430;
   
 console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 

@@ -10,6 +10,9 @@ if (windowWidth > 490)
   windowWidth = 490;
 console.log("w: " + (dimRatio*windowHeight) + " h: " + ((1/dimRatio)*windowWidth));
 
+windowWidth = (dimRatio*windowHeight);
+windowHeight = ((1/dimRatio)*windowWidth);
+
 // BUTTONS
 RectButton checkButt, newButt, revealButt, tutorialButt;
 

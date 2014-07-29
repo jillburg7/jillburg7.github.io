@@ -356,7 +356,7 @@ void initializeGuess() {
 void displayNumGuess(String s) {
   stroke(0);
   fill(255);
-  rect((470/570 * gameWidth), (107/900 * gameHeight, (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
+  rect((470/570 * gameWidth), (107/900 * gameHeight), (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
   textSize(16*.8);
   fill(0);
   text(s, (504/570 * gameWidth), (131/900 * gameHeight)); //guess tracker -- for user

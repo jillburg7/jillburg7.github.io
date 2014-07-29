@@ -57,7 +57,7 @@ float buttSize = 76/570 * gameWidth;
 void setup () {
   // size( gameWidth, gameHeight ); //"w: 1023 h: 799"
   
-  size( windowHeight, ((1/dimRatio)*windowWidth) );
+  size( windowWidth, ((1/dimRatio)*windowWidth) );
   
   // size( 570, 900 );
   // console.log("gameWidth: " + gameWidth);

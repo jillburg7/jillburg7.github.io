@@ -331,7 +331,7 @@ void commitGuess() {
   stroke(0);
   if (g.size() > 0) {
     for (int i = 0; i < 4; i++) {
-      g.get(i).setY(yLoc+(27/900 * gameHeight));  //set respective y location
+      g.get(i).setY((yLoc+27)/900 * gameHeight);  //set respective y location
       g.get(i).drawPeg();    //update peg component
       g.remove(i);  //remove from guess peg map
     }

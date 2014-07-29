@@ -1,13 +1,12 @@
-//"w: 1023 h: 806" 
-// "w: 510.46666666666664 h: 806"
+
 
 var windowWidth = $("#game").width();
 var windowHeight = $("#game").height();
-console.log("w: " + windowWidth + " h: " + windowHeight);
 
 float dimRatio = 400/700;
 if (windowWidth > 400)
   windowWidth = 400;
+  
 console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 
 windowHeight = ((1/dimRatio)*windowWidth);
@@ -397,7 +396,7 @@ void initializeColors() {
 } //end initializeColors
 
 void initializeBoard() {
-  textSize(60);
+  textSize(60*.8);
   fill(0, 102, 153, 204);
   text("mastermind", (25/570 * gameWidth), (25/900 * gameHeight), (350/570 * gameWidth), (75/900 * gameHeight)); //GAME NAME
   stroke(0);

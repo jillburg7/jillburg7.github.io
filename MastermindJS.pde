@@ -7,12 +7,12 @@ float dimRatio = 430/700;
 if (windowWidth > 430)
   windowWidth = 430;
   
-console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
+// console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 
 windowHeight = ((1/dimRatio)*windowWidth);
 
 // BUTTONS
-RectButton checkButt, newButt, revealButt, tutorialButt;
+RectButton checkButt, newButt, revealButt;
 
 color clicked;
 boolean ready = false, gameStarted = false, check = false, selected = false, set = false;
@@ -66,9 +66,9 @@ void setup () {
   yoff = 100/900 * gameHeight;
 
   checkButt = new RectButton((352/570 * gameWidth), (824/900 * gameHeight), (80/570 * gameWidth), buttoncolor, highlight, 46, 15, 19);
-  newButt = new RectButton(buttW, (148/900 * gameHeight), buttSize, buttoncolor, highlight, 32, 6, 25);
-  revealButt = new RectButton(buttW, (192/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 2, 27);
-  tutorialButt = new RectButton(buttW, (237/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 3, 27);
+  newButt = new RectButton(buttW, (158/900 * gameHeight), buttSize, buttoncolor, highlight, 32, 6, 25);
+  revealButt = new RectButton(buttW, (202/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 2, 27);
+  // tutorialButt = new RectButton(buttW, (237/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 3, 27);
   
   setColors();
   noStroke();
@@ -78,15 +78,15 @@ void setup () {
 void draw() {
   update(mouseX, mouseY);
   
-  newButt.display();
   textSize(18*.75);
-  text("New", (491/570 * gameWidth), (173/900 * gameHeight));
   checkButt.display();
   text("Check", (368/570 * gameWidth), (848/900 * gameHeight));
+  newButt.display();
+  text("New", (491/570 * gameWidth), (183/900 * gameHeight));
   revealButt.display();
-  text("Reveal", (480/570 * gameWidth), (217/900 * gameHeight));
-  tutorialButt.display();
-  text("How-To", (477/570 * gameWidth), (262/900 * gameHeight));
+  text("Reveal", (480/570 * gameWidth), (227/900 * gameHeight));
+  // tutorialButt.display();
+  // text("How-To", (477/570 * gameWidth), (262/900 * gameHeight));
   
   sizer = 50/570 * gameWidth;
       if (sizer % 2 !== 0)
@@ -230,13 +230,13 @@ void update(int x, int y) {
         ready = false;
       }
     }//end revealButt.pressed()
-    else if (tutorialButt.over()) {
+    // else if (tutorialButt.over()) {
       //show tutorial !!! 
       //make boolean to let game known what state its in and only update screen if backButt is pressed?
 //      getTutorial();
 //      set = true;
 //      redraw();
-    }
+    // }
   }//end if (mousePressed)
 }//end update()
 
@@ -364,21 +364,21 @@ void initializeGuess() {
 void displayNumGuess(String s) {
   stroke(0);
   fill(255);
-  rect((470/570 * gameWidth), (107/900 * gameHeight), (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
+  rect((470/570 * gameWidth), (113/900 * gameHeight), (76/570 * gameWidth), (36/900 * gameHeight));  //redraw score panel
   textSize(16*.75);
   fill(0);
-  text(s, (504/570 * gameWidth), (131/900 * gameHeight)); //guess tracker -- for user
+  text(s, (504/570 * gameWidth), (137/900 * gameHeight)); //guess tracker -- for user
 } //end displayNumGuess
 
 void initializeControlPanel() {
   stroke(0);
   fill(247);
-  rect((460/570 * gameWidth), (84 /900 * gameHeight), (96/570 * gameWidth), (198 /900 * gameHeight));  //control panel border
+  rect((460/570 * gameWidth), (84 /900 * gameHeight), (96/570 * gameWidth), (166 /900 * gameHeight));  //control panel border
   fill(255);
-  rect((470/570 * gameWidth), (107 /900 * gameHeight), (76/570 * gameWidth), (36 /900 * gameHeight));  //score panel
+  rect((470/570 * gameWidth), (113 /900 * gameHeight), (76/570 * gameWidth), (36 /900 * gameHeight));  //score panel
   textSize(16*.75);
   fill(0);
-  text("Guesses:", (472/570 * gameWidth), (89 /900 * gameHeight), (145/570 * gameWidth), (84 /900 * gameHeight)); //header text
+  text("Guesses:", (472/570 * gameWidth), (93 /900 * gameHeight), (145/570 * gameWidth), (84 /900 * gameHeight)); //header text
 } //end initializeControlPanel
 
 void initializeColors() {
@@ -409,6 +409,8 @@ void initializeBoard() {
   rect((25/570 * gameWidth), (84/900 * gameHeight), (415/570 * gameWidth), (801/900 * gameHeight));  //board panel
   fill(175);
   rect((45/570 * gameWidth), (100/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight));  //code panel
+  fill(0, 102, 153, 204);
+  text("?  ?  ?  ?", (74/570 * gameWidth), (.99/6 * gameHeight));
   stroke(0);
   fill(255);
   //10 previous guess panels

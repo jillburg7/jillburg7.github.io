@@ -1,13 +1,11 @@
 
 
-var windowWidth = $("#game").width();
-var windowHeight = $("#game").height();
+var windowWidth = $("#content-window").width();
+var windowHeight = $("#content-window").height();
 
 float dimRatio = 430/700;
 if (windowWidth > 430)
   windowWidth = 430;
-  
-// console.log("w: " + windowWidth + " h: " + ((1/dimRatio)*windowWidth));
 
 windowHeight = ((1/dimRatio)*windowWidth);
 
@@ -53,12 +51,9 @@ float buttSize = 76/570 * gameWidth;
 //---
 
 void setup () {
-  // size( gameWidth, gameHeight ); //"w: 1023 h: 799"
   
   size( windowWidth, ((1/dimRatio)*windowWidth) );
   
-  // size( 570, 900 );
-  // console.log("gameWidth: " + gameWidth);
   set = false;  
   CURRENT_PROGRAM_MODE = -1;
 
@@ -68,7 +63,6 @@ void setup () {
   checkButt = new RectButton((352/570 * gameWidth), (824/900 * gameHeight), (80/570 * gameWidth), buttoncolor, highlight, 46, 15, 19);
   newButt = new RectButton(buttW, (158/900 * gameHeight), buttSize, buttoncolor, highlight, 32, 6, 25);
   revealButt = new RectButton(buttW, (202/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 2, 27);
-  // tutorialButt = new RectButton(buttW, (237/900 * gameHeight), buttSize, buttoncolor, highlight, 30, 3, 27);
   
   setColors();
   noStroke();
@@ -85,8 +79,6 @@ void draw() {
   text("New", (491/570 * gameWidth), (183/900 * gameHeight));
   revealButt.display();
   text("Reveal", (480/570 * gameWidth), (227/900 * gameHeight));
-  // tutorialButt.display();
-  // text("How-To", (477/570 * gameWidth), (262/900 * gameHeight));
   
   sizer = 50/570 * gameWidth;
       if (sizer % 2 !== 0)
@@ -230,13 +222,6 @@ void update(int x, int y) {
         ready = false;
       }
     }//end revealButt.pressed()
-    // else if (tutorialButt.over()) {
-      //show tutorial !!! 
-      //make boolean to let game known what state its in and only update screen if backButt is pressed?
-//      getTutorial();
-//      set = true;
-//      redraw();
-    // }
   }//end if (mousePressed)
 }//end update()
 
@@ -402,14 +387,14 @@ void initializeColors() {
 
 void initializeBoard() {
   textSize(60*.75);
-  fill(0, 102, 153, 204);
+  fill(#67B7CE);
   text("mastermind", (25/570 * gameWidth), (25/900 * gameHeight), (350/570 * gameWidth), (75/900 * gameHeight)); //GAME NAME
   stroke(0);
   fill(247);
   rect((25/570 * gameWidth), (84/900 * gameHeight), (415/570 * gameWidth), (801/900 * gameHeight));  //board panel
-  fill(175);
+  fill(225);
   rect((45/570 * gameWidth), (100/900 * gameHeight), (300/570 * gameWidth), (54/900 * gameHeight));  //code panel
-  fill(0, 102, 153, 204);
+  fill(#67B7CE);
   text("?  ?  ?  ?", (74/570 * gameWidth), (.99/6 * gameHeight));
   stroke(0);
   fill(255);
@@ -516,7 +501,7 @@ class Peg {
   color EMPTY = color(209, 209, 209); 
   
   Peg() {
-    this(0, 0, 100, EMPTY);  //#000000);
+    this(0, 0, 100, EMPTY);
   }
   
   Peg(int x, int y, int sizer, color c) {

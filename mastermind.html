@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Jillian Burgess</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jillian Burgess</title>
 
-	<!-- Bootstrap -->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-	
-	<!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Jillian Burgess</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div> <!-- container -->
-    </div>
-  	<!-- Static navbar -->
-  	
+  <!-- <link rel="icon" sizes="196x196" href="img/chrome-touch-icon-196x196.png"> -->
+</head>
+<body>
+  <!-- Static navbar -->
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
-    	<div id="content-window" class="content row">
-    		
-				<div class="col-sm-5 col-md-5 col-lg-6">
-					<ul id="mytabs" class="nav nav-tabs" role="tablist">
-					  <li class="active"><a href="#howto">How to Play</a></li>
-					  <li><a href="#highscores">High Scores</a></li>
-					</ul>
-          <div id="myTabContent" class="tab-content">
-  		      <div class="tab-pane fade in active" id="howto">
-  		        <h5>Objective: Guess the hidden code peg combination in 10 guesses or less.</h5>
-              
-              <span class="glyphicon glyphicon-chevron-right"></span>  To start a new game, simply click the "New" button.
-              <br/>
-              <span class="glyphicon glyphicon-chevron-right"></span>  To reveal code after a game is started, click "Reveal" button.
-              <br/>
-              <span class="standout-text glyphicon glyphicon-chevron-right"></span> <span class="standout-text"> Guess Peg Controls:</span>
-              <ul>
-                <li>To add - Click on a color in the color peg panel on the right.</li>
-                <li>To remove - Click on the guess peg in the guess panel on the bottom.</li>
-                <li>To submit guess, click the "Check" button.</li>
-              </ul>
-              <span class="standout-text glyphicon glyphicon-chevron-right"></span> <span class="standout-text"> Feedback Peg Key:</span>
-              <ul>
-                <li>Black peg - Correct color in the correct position.</li>
-                <li>White peg - Correct color in the wrong position.</li>
-                <li>Gray peg - Empty peg; incorrect color.</li>
-              </ul>
-              <span class="glyphicon glyphicon-exclamation-sign"></span>  The order in which the feedback pegs are displayed does not have any relation to the order & color of the guess pegs.
-              <br/>
-  		      </div>
-  		      <div class="tab-pane fade" id="highscores">
-  		        <p>Coming Soon!</p>
-  		      </div>
-          </div>
-				</div>
-
-        <div class="game col-xs-12 col-sm-7 col-md-7 col-lg-6">
-          <script src="js/processing.min.js"></script>
-          <canvas data-processing-sources="MastermindJS.pde"></canvas>
-        </div>
-
-        <!-- Add the extra clearfix for only the required viewport -->
-        <div class="clearfix visible-xs-block "></div>
-
-			</div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jillian Burgess</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li class="active"><a href="mastermind.html">Mastermind Game</a></li>
+          <!-- <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li> -->
+        </ul>
+      </div><!--/.nav-collapse -->
     </div> <!-- container -->
+  </div>
+  <!-- Static navbar -->
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tab.js"></script>
-    <script src="js/mastermind.js"></script>
-	</body>
-	</html>
+  <div class="container">
+    <div id="content-window" class="content row">
+
+      <div class="col-sm-5 col-md-5 col-lg-6">
+        <ul id="mytabs" class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#howto">How to Play</a></li>
+          <li><a href="#highscores">High Scores</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade in active" id="howto">
+            <h5>Objective: Guess the hidden code peg combination in 10 guesses or less.</h5>
+
+            <span class="glyphicon glyphicon-chevron-right"></span>  To start a new game, simply click the "New" button.
+            <br/>
+            <span class="glyphicon glyphicon-chevron-right"></span>  To reveal code after a game is started, click "Reveal" button.
+            <br/>
+            <span class="standout-text glyphicon glyphicon-chevron-right"></span> <span class="standout-text"> Guess Peg Controls:</span>
+            <ul>
+              <li>To add - Click on a color in the color peg panel on the right.</li>
+              <li>To remove - Click on the guess peg in the guess panel on the bottom.</li>
+              <li>To submit guess, click the "Check" button.</li>
+            </ul>
+            <span class="standout-text glyphicon glyphicon-chevron-right"></span> <span class="standout-text"> Feedback Peg Key:</span>
+            <ul>
+              <li>Black peg - Correct color in the correct position.</li>
+              <li>White peg - Correct color in the wrong position.</li>
+              <li>Gray peg - Empty peg; incorrect color.</li>
+            </ul>
+            <span class="glyphicon glyphicon-exclamation-sign"></span>  The order in which the feedback pegs are displayed does not have any relation to the order &amp; color of the guess pegs.
+            <br/>
+          </div>
+          <div class="tab-pane fade" id="highscores">
+            <p>Coming Soon!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="game col-xs-12 col-sm-7 col-md-7 col-lg-6">
+        <script src="js/processing.min.js"></script>
+        <canvas data-processing-sources="MastermindJS.pde"></canvas>
+      </div>
+
+      <!-- Add the extra clearfix for only the required viewport -->
+      <div class="clearfix visible-xs-block "></div>
+
+    </div>
+  </div>
+  <!-- container -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tab.js"></script>
+  <script src="js/mastermind.js"></script>
+</body>
+</html>

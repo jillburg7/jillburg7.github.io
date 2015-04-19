@@ -16,7 +16,7 @@
       ],
       "github": "https://github.com/jillburg7/FitDash",
       "demoUrl": "",
-      "pictures": [],
+      "pictures": [ "../img/icon-60@3x.png", "../img/launch.png", "../img/todaysHourlyOptions.png" ],
       "description": "Data visualizer for fitness statistics captured in iOS Health app"
     },
     {

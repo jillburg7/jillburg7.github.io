@@ -1,0 +1,112 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "name": "FitDash",
+      "dateCompleted": "",
+      "dateStarted": "October 2014",
+      "technologiesUsed": [
+        "Swift"
+      ],
+      "frameworks": [
+        {
+          "name": "...Objective-C libs...",
+          "url": ""
+        }
+      ],
+      "github": "https://github.com/jillburg7/FitDash",
+      "demoUrl": "",
+      "pictures": [],
+      "description": "Data visualizer for fitness statistics captured in iOS Health app"
+    },
+    {
+      "id": 1,
+      "name": "GrumpyCatMockup",
+      "dateCompleted": "January 2015",
+      "dateStarted": "January 2015",
+      "technologiesUsed": [
+        "SCSS",
+        "HTML5"
+      ],
+      "frameworks": [
+        {
+          "name": "",
+          "url": ""
+        }
+      ],
+      "github": "https://github.com/jillburg7/grumpyCatMockup",
+      "demoUrl": "jillburg7.github.io/grumpyCatMockup/",
+      "pictures": [],
+      "description": "First stab at creating my own responsive SCSS/CSS framework"
+    },
+    {
+      "id": 2,
+      "name": "MastermindJS",
+      "dateCompleted": "August 2014",
+      "dateStarted": "July 2014",
+      "technologiesUsed": [
+        "Javascript"
+      ],
+      "frameworks": [
+        {
+          "name": "Processing.js",
+          "url": ""
+        }
+      ],
+      "github": "https://github.com/jillburg7/MastermindJS",
+      "demoUrl": "jillburg7.github.io/MastermindJS/",
+      "pictures": [],
+      "description": "Recreated a retro board game using Processing.js library"
+    },
+    {
+      "id": 3,
+      "name": "Illuminate",
+      "dateCompleted": "April 2014",
+      "dateStarted": "February 2014",
+      "technologiesUsed": [
+        "HTML",
+        "Javascript",
+        "CSS",
+        "PHP",
+        "MySQL"
+      ],
+      "frameworks": [
+        {
+          "name": "Foundation",
+          "url": ""
+        },
+        {
+          "name": "PDFjs",
+          "url": ""
+        },
+        {
+          "name": "jQueryUploader",
+          "url": ""
+        }
+      ],
+      "github": "https://github.com/jillburg7/illuminate-app",
+      "demoUrl": "",
+      "pictures": [],
+      "description": ""
+    },
+    {
+      "id": 4,
+      "name": "",
+      "dateCompleted": "",
+      "dateStarted": "",
+      "technologiesUsed": [
+        ""
+      ],
+      "frameworks": [
+        {
+          "name": "",
+          "url": ""
+        }
+      ],
+      "github": "https://github.com/jillburg7/",
+      "demoUrl": "",
+      "pictures": [],
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "education": {
+      "name": "",
+      "dateEnd": "",
+      "dateStart": "",
+      "major": "",
+      "minor": "",
+      "gpa": 3.35,
+      "notableCourses": []
+  },
+  "employment": [
+    {
+      "name": "",
+      "dateEnd": "",
+      "dateStart": "",
+      "title": "",
+      "responsibilites": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "dateEnd": "",
+      "dateStart": "",
+      "technologiesUsed": "",
+      "description": ""
+    }
+  ],
+  "achievements": [],
+  "awards": [],
+  "clubs": [
+    {
+      "name": "",
+      "positionHeld": "",
+      "dateEnd": "",
+      "dateStart": ""
+    }
+  ]
+}

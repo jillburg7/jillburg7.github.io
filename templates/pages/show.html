@@ -1,5 +1,12 @@
-<div class="page-header">
-  <h1>{{project.name}}</h1>
-  <img ng-src="{{project.picture[0]}}" />
-  <portfolio-card></portfolio-card>
+<div class="details">
+	<h1>{{project.name}}</h1>
+	<h5>Date Completed:</h5>
+	<!-- <portfolio-card></portfolio-card> -->
+	<p>{{project.dateCompleted}}</p>
+	<h5>Description:</h5>
+	<p>{{project.description}}</p>
+	<h3>
+		<a class="url" ng-href="{{project.github}}">View on Github Page</a>
+	</h3>
+	<img ng-repeat="picture in pictures" ng-src="../img/{{picture}}" />
 </div>

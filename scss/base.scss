@@ -1,7 +1,12 @@
 @import 'reset';
 @import 'card';
+@import 'details';
 
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+a, a:hover {
+    text-decoration: none;
 }

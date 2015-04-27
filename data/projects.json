@@ -16,7 +16,7 @@
       ],
       "github": "https://github.com/jillburg7/FitDash",
       "demoUrl": "",
-      "pictures": [ "../img/icon-60@3x.png", "../img/launch.png", "../img/todaysHourlyOptions.png" ],
+      "pictures": [ "icon-60@3x.png", "launch.png", "todaysHourlyOptions.png", "dayInFlights.png", "weekInSteps.png" ],
       "description": "Data visualizer for fitness statistics captured in iOS Health app"
     },
     {
@@ -55,7 +55,7 @@
       ],
       "github": "https://github.com/jillburg7/MastermindJS",
       "demoUrl": "jillburg7.github.io/MastermindJS/",
-      "pictures": [],
+      "pictures": [ "mastermindJS.png" ],
       "description": "Recreated a retro board game using Processing.js library"
     },
     {
@@ -86,27 +86,8 @@
       ],
       "github": "https://github.com/jillburg7/illuminate-app",
       "demoUrl": "",
-      "pictures": [],
-      "description": ""
-    },
-    {
-      "id": 4,
-      "name": "",
-      "dateCompleted": "",
-      "dateStarted": "",
-      "technologiesUsed": [
-        ""
-      ],
-      "frameworks": [
-        {
-          "name": "",
-          "url": ""
-        }
-      ],
-      "github": "https://github.com/jillburg7/",
-      "demoUrl": "",
-      "pictures": [],
-      "description": ""
+      "pictures": [ "illuminate.png" ],
+      "description": "A prototype web application intended to enhance the multiple-student/instructor learning experience by providing an interactive virtual environment for course lecture content and Q&A activities. Designed using responsive web design techniques such that any user with a device with a reliable network connection may use the application."
     }
   ]
 }

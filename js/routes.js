@@ -15,6 +15,14 @@ angular.module('Portfolio').config(function($routeProvider) {
 			controller: "AboutController"
 		})
 
+		.when('/contact', {
+			templateUrl: "/templates/pages/contact.html",
+		})
+
+		.when('/mastermind', {
+			templateUrl: "/templates/pages/mastermind.html",
+		})
+
 		.when('/projects/:id', {
 			templateUrl: "/templates/pages/show.html",
 			controller: "ProjectShowController"
